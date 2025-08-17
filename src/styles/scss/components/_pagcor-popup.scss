@@ -1,0 +1,18 @@
+.pagcor-popup {
+  background: #0a021aed;
+  padding: 30px;
+  border-radius: 10px;
+  backdrop-filter: blur(44px);
+  border: 1px solid #382e4f;
+  .title {
+    background: linear-gradient(66deg, #f44eff, #56d7d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px #482891);
+  }
+  .rules-list {
+    background-color: #3b2c4f;
+    border-radius: 10px;
+    border: 1px solid #785f99;
+  }
+}

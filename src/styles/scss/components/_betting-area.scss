@@ -1,0 +1,260 @@
+@use '../variables' as *;
+.betting-board-area {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  transition: bottom 0.5s ease;
+  > {
+    div {
+      width: calc(100% / 3 - 30px);
+      height: 100%;
+      // background-color: rgb(31 25 41 / 51%);
+      border-radius: 5px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      backdrop-filter: blur(20px);
+      .card-roard {
+        height: 100%;
+      }
+    }
+  }
+  .betting-area {
+    position: relative;
+    background: transparent;
+    width: calc(100% / 3 + 40px);
+    transition: bottom 0.5s ease;
+    bottom: 0;
+    &.betting-area-mid {
+      width: 885px;
+    }
+    > div {
+      &:not(.betting-area-controls) {
+        position: absolute;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        cursor: pointer;
+        filter: brightness(1);
+        transition: 0.5s ease-in-out;
+        // padding: 6px;
+        padding-top: 6px;
+        &:hover {
+          filter: brightness(1.2);
+        }
+      }
+    }
+    .static-chip {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      filter: drop-shadow(0 0 4px #000);
+      width: 55px;
+    }
+    .betting-button {
+      // filter: brightness(0.6) !important;
+      cursor: not-allowed !important;
+      pointer-events: none !important;
+    }
+    .betting-area-pp,
+    .betting-area-bp {
+      top: 0;
+      height: calc(100% / 2.9);
+      width: calc(100% / 3);
+      .static-chip {
+        top: calc(50% + 8px);
+      }
+    }
+    .betting-area-p {
+      .static-chip {
+        transform: unset;
+        left: 10px;
+      }
+      .betting-stats {
+        width: calc(100% - 33%);
+      }
+    }
+    .betting-area-b {
+      .static-chip {
+        transform: unset;
+        left: unset;
+        right: 10px;
+      }
+      .betting-stats {
+        width: calc(100% - 33%);
+        margin-left: auto;
+      }
+    }
+    .betting-area-pp {
+      left: 0;
+      background-image: url(@/assets/images/bet-area-pp.png);
+    }
+    .betting-area-bp {
+      right: 0;
+      background-image: url(@/assets/images/bet-area-bb.png);
+    }
+    .betting-area-t {
+      left: 50%;
+      z-index: 2;
+      transform: translateX(-50%);
+      background-image: url(@/assets/images/bet-area-t.png);
+      width: calc(100% / 3 - 8px);
+      height: calc(100% / 1.39 + 1px);
+      .timer {
+        position: absolute;
+        top: -80%;
+        left: 50%;
+        transform: translateX(-50%) scale(2);
+        border-radius: 100px;
+        backdrop-filter: blur(10px);
+        // border: 1px solid #000;
+        pointer-events: none;
+        p,
+        span {
+          font-weight: 900;
+        }
+      }
+    }
+    .betting-area-p,
+    .betting-area-b {
+      bottom: 2px;
+      width: calc(100% / 2 - 2px);
+      height: calc(100% / 1.6);
+      .static-chip {
+        top: calc(50% + 8px);
+      }
+    }
+    .betting-area-p {
+      left: 0;
+      background-image: url(@/assets/images/bet-area-p.png);
+    }
+    .betting-area-b {
+      right: 0;
+      background-image: url(@/assets/images/bet-area-b.png);
+    }
+    &.betting-open {
+      position: relative;
+      bottom: 70px;
+      transition: bottom 0.5s ease-in-out;
+      .betting-button {
+        filter: brightness(1) !important;
+        cursor: pointer !important;
+        pointer-events: all !important;
+        &.pointer-none {
+          cursor: pointer !important;
+          pointer-events: none !important;
+        }
+      }
+    }
+    .betting-area-controls {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      bottom: -59px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 65px);
+      gap: 10px;
+    }
+    .betting-chips {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      gap: 15px;
+    }
+  }
+  .result-board-top {
+    width: 100%;
+    height: 40px;
+    background: $red-dark-gradient;
+    border: 1px solid #ac0aa9;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    // padding: 0px 10px;
+  }
+  .result-board {
+    width: 100%;
+    height: calc(100% - 40px);
+  }
+  .result-board-right {
+    .main-road,
+    .small-boxes {
+      height: calc(100% / 2);
+      width: inherit;
+    }
+    .small-boxes {
+      ul {
+        &.card-roard {
+          li {
+            &::before {
+              width: 2px;
+            }
+          }
+        }
+      }
+    }
+    .bigeye-road {
+      height: calc(100% / 2);
+      width: inherit;
+    }
+    .bottom-road {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: calc(100% / 2);
+      .small-road,
+      .cock-roach-road {
+        height: 100%;
+        width: calc(100% / 2);
+        .card-roard {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@keyframes blink-brightness {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.6);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+@keyframes blinker {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.blink-bright {
+  animation: blink-brightness 1.5s ease-in-out 1;
+}
+
+.blink-infinite {
+  animation: blinker 1s ease-in-out 3;
+}
+
+.blink-3 {
+  animation: blink-brightness 1s ease-in-out 3;
+}

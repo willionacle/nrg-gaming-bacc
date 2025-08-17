@@ -1,0 +1,184 @@
+@use '../variables' as *;
+header {
+  background-image: url(../assets/images/header-bg.png);
+  background-size: cover;
+  width: 100%;
+  background-position: top center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  z-index: 200;
+  &::before {
+    content: '';
+    bottom: -1px;
+    height: 5px;
+    width: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(122, 32, 152, 0) 0%,
+      rgb(214, 158, 255) 49%,
+      rgba(115, 47, 141, 0) 99%
+    );
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    filter: blur(3px);
+  }
+  &.header-table {
+    background: unset;
+    &::after,
+    &::before {
+      display: none;
+    }
+    .header-logo {
+      background: unset;
+      filter: drop-shadow(0 0 8px #000);
+      &::after,
+      &::before {
+        display: none !important;
+      }
+    }
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50% !important;
+    height: 100% !important;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.836) 50%,
+      rgba(255, 255, 255, 0) 70%
+    ) !important;
+    mix-blend-mode: overlay;
+    animation: shineEffect 20s infinite linear;
+    pointer-events: none;
+  }
+  .header-left {
+    display: flex;
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    .user-wrapper {
+      display: flex;
+      align-items: center;
+      position: relative;
+      .user-icon {
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url(../assets/images/icon-user-wrapper.png);
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        left: -40px;
+      }
+      .user-name {
+        min-width: 100px;
+        height: 40px;
+        background-color: #180027;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        display: flex;
+        align-items: center;
+        border: 1px solid #61198d;
+        padding-left: 20px;
+        padding-right: 10px;
+        font-weight: 700;
+      }
+    }
+  }
+  .header-logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 268px;
+    height: 123px;
+    background: $gold-gradient;
+    clip-path: polygon(51% 100%, 0 0, 100% 0);
+    left: 50%;
+    top: -2px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    filter: drop-shadow(0 0 20px #000);
+    &::before {
+      content: '';
+      position: absolute;
+      display: flex;
+      align-items: center;
+      width: calc(100% - 50px);
+      height: calc(100% - 20px);
+      background: $dark-color;
+      clip-path: polygon(51% 100%, 0 0, 100% 0);
+      left: 50%;
+      top: 10px;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -150%; // Start position
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 30%,
+        rgb(255, 255, 255) 50%,
+        rgba(255, 255, 255, 0) 70%
+      );
+      mix-blend-mode: overlay;
+      // clip-path: polygon(51% 100%, 0 0, 100% 0);
+      animation: shineEffect 4s infinite linear;
+    }
+    img {
+      width: calc(100% / 4);
+      position: absolute;
+      top: 14%;
+      left: 50%;
+      transform: translatex(-50%);
+    }
+  }
+  .notice-container {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    .notice-text-container {
+      position: relative;
+      overflow: hidden;
+      width: calc(100% - 50px);
+      height: 20px;
+      .notice-text {
+        animation: marquee 10s linear infinite;
+        white-space: nowrap;
+        width: fit-content;
+        position: absolute;
+      }
+      @keyframes marquee {
+        from {
+          right: -300%;
+        }
+        to {
+          right: 100%;
+        }
+      }
+    }
+  }
+  .header-btns {
+    gap: 5px !important;
+  }
+}

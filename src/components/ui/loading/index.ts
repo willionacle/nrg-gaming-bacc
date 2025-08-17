@@ -1,0 +1,1 @@
+export {default as GameLoading} from './game-loading'

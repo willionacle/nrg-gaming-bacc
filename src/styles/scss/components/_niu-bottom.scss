@@ -1,0 +1,106 @@
+.niu-bottom-wrapper {
+  position: absolute;
+  bottom: 0;
+  background-image: url(../assets/images/niu-control-bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: bottom;
+  height: 215px;
+  z-index: 1;
+  .main-text-panel {
+    text-shadow: unset !important;
+  }
+  .bet-card-result-niu-wrapper {
+    left: 50%;
+    top: unset;
+    transform: translateX(-50%);
+    background-color: unset;
+    height: 76px;
+    position: relative;
+    .title {
+      display: none;
+    }
+    .center-pop {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(
+        266deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 54%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      width: calc(100% - 100px);
+      height: 50px;
+      img {
+        width: 100px;
+      }
+    }
+  }
+}
+
+.money-container-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 900;
+  gap: 0;
+  .money-cont {
+    width: 100%;
+    text-align: center;
+    justify-content: space-between;
+    min-width: 255px;
+    padding: 2px 20px;
+    p {
+      font-weight: 700;
+      font-size: 20px;
+      width: 100%;
+    }
+  }
+}
+
+.money-container {
+  .label {
+    text-align: center;
+    color: #d7d9f6;
+    text-transform: uppercase !important;
+    font-weight: 600;
+  }
+}
+
+.niu-bottom-center {
+  background-image: url(../assets/images/control-panel.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: bottom;
+  width: 717px;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: -14px;
+  .chip {
+    width: 64px;
+  }
+  .niu-chips {
+    width: calc(100% - 298px);
+    justify-content: center;
+    gap: 30px;
+  }
+}
+
+.bottom-msg {
+  font-weight: 600;
+  font-size: 30px;
+  font-family: 'Cinzel', serif;
+  background: -webkit-linear-gradient(#ffffff, #8a8a8a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

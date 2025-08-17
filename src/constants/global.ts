@@ -1,0 +1,35 @@
+export const AREA_KEYS = [
+  'BANKER_1_DOUBLE',
+  'BANKER_1_EQUAL',
+  'BANKER_2_DOUBLE',
+  'BANKER_2_EQUAL',
+  'BANKER_3_DOUBLE',
+  'BANKER_3_EQUAL',
+
+  'PLAYER_1_DOUBLE',
+  'PLAYER_1_EQUAL',
+  'PLAYER_2_DOUBLE',
+  'PLAYER_2_EQUAL',
+  'PLAYER_3_DOUBLE',
+  'PLAYER_3_EQUAL',
+] as const;
+
+export const AREA_KEYS_VISUAL = [
+  // P1 column
+  'BANKER_1_EQUAL',
+  'BANKER_1_DOUBLE',
+  'PLAYER_1_EQUAL',
+  'PLAYER_1_DOUBLE',
+
+  // P2 column
+  'BANKER_2_EQUAL',
+  'BANKER_2_DOUBLE',
+  'PLAYER_2_EQUAL',
+  'PLAYER_2_DOUBLE',
+
+  // P3 column
+  'BANKER_3_EQUAL',
+  'BANKER_3_DOUBLE',
+  'PLAYER_3_EQUAL',
+  'PLAYER_3_DOUBLE',
+] as const;

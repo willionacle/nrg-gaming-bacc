@@ -1,0 +1,14 @@
+.cat-filter-wrapper {
+  .tabler-icon {
+    color: #ff5a5a !important;
+  }
+  .cat-filter-active {
+    --button-bg: #930808 !important;
+    .tabler-icon {
+      color: #ffffff !important;
+    }
+    &:hover {
+      background: #aa0b0b !important;
+    }
+  }
+}

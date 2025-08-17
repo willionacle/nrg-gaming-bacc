@@ -1,0 +1,1 @@
+export {default as BackgroundMusicPlayer} from './background-music-player'

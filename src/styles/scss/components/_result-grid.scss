@@ -1,0 +1,157 @@
+@use '../variables' as *;
+ul {
+  &.card-roard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    background-color: rgb(31 25 41 / 76%);
+    &::before {
+      content: '';
+      background-image: url(../assets/images/logo.png);
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+    }
+    li {
+      border-right: none;
+      border-bottom: none;
+      height: 16.6666666667%;
+      aspect-ratio: 1/1;
+      position: relative;
+      .tie-count {
+        color: #fff !important;
+      }
+      &.BIG {
+        .top-left {
+          top: 3px;
+          left: 3px;
+        }
+        .line-green {
+          width: calc(100% - 4px) !important;
+          bottom: 0;
+          right: 0;
+          top: unset;
+          left: unset;
+          transform: unset;
+        }
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        width: 5px;
+        aspect-ratio: 1/1;
+        background: rgb(255 255 255 / 20%);
+        border-radius: 100px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &.light {
+      background-color: #fff;
+      li {
+        border-right: 1px solid rgb(65 65 65 / 8%);
+        border-bottom: 1px solid rgb(65 65 65 / 8%);
+        .tie-count {
+          color: #000 !important;
+        }
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.predector-btn {
+  border-radius: 100px;
+  padding: 2px 5px;
+  cursor: pointer;
+  &.predector-blue {
+    background-color: #126fda98;
+  }
+  &.predector-red {
+    background-color: #800724;
+  }
+}
+
+.niu-history-board {
+  position: absolute;
+  right: 16px;
+  bottom: 242px;
+  width: 313px;
+  height: 592px;
+  background: linear-gradient(231deg, rgb(62, 18, 77) 18%, rgb(29, 1, 38) 58%);
+  border-radius: 10px;
+  border: 1px solid #983c80;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  .header {
+    background-image: url(../assets/images/panel-bg-2.png);
+    background-size: 100% 100% !important;
+    background-position: center;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    .close {
+      position: absolute;
+      right: 30px;
+      cursor: pointer;
+      &:hover {
+        filter: brightness(1.2);
+      }
+    }
+  }
+  .groups {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - 50px);
+    gap: 0px;
+    .history-group {
+      width: 100%;
+      height: calc(100% / 3);
+      display: flex;
+      align-items: center;
+      border-top: 1px solid #983c80;
+      .history-cat {
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p {
+          background: linear-gradient(4deg, #00f0ff, #ff00ff);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-weight: 700;
+          font-size: 30px;
+        }
+      }
+      .history-grid {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .card-roard {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.history-grid {
+  width: 100%;
+  height: 100%;
+  .tie-count {
+    font-size: 20px !important;
+    z-index: 3;
+    color: #fff !important;
+  }
+}
